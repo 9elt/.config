@@ -1,0 +1,17 @@
+#!/bin/sh
+
+pgrep -x sxhkd >/dev/null || sxhkd &
+
+bspc monitor DP-4 -d HOME WORK
+bspc monitor HDMI-0 -d WEB OTHER
+
+bspc config border_width 1
+bspc config window_gap 0
+
+bspc config split_ratio 0.50
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+
+hsetroot -solid '#0F1620'
+
+~/.config/polybar/launch.sh &

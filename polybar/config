@@ -1,0 +1,198 @@
+[colors]
+background = #0F1620
+foreground = #B3B1AD
+red = #EA6C73
+green = #91B362
+yellow = #F9AF4F
+blue = #53BDFA
+
+
+[module/alsa]
+type = internal/alsa
+master-soundcard = default
+speaker-soundcard = default
+headphone-soundcard = default
+master-mixer = Master
+interval = 5
+format-volume = <label-volume> <ramp-volume>
+format-volume-foreground = ${colors.blue}
+format-volume-padding = 1
+label-volume = "%percentage%%"
+ramp-volume-0 = "▮    "
+ramp-volume-1 = "▮▮   "
+ramp-volume-2 = "▮▮▮  "
+ramp-volume-3 = "▮▮▮▮ "
+ramp-volume-4 = "▮▮▮▮▮"
+ramp-volume-font = 2
+format-muted = <label-muted>
+format-muted-foreground = ${colors.red}
+format-muted-overline = ${colors.red}
+format-muted-padding = 1
+label-muted = "AUDIO MUTED"
+
+
+[module/memory]
+type = internal/memory
+interval = 1
+format = <label>
+format-background = ${colors.background}
+format-foreground = ${colors.yellow}
+format-padding = 1
+label = RAM %percentage_used%% %gb_used% / %gb_total%
+
+
+[module/battery]
+type = internal/battery
+full-at = 99
+; Use the following command to list batteries and adapters:
+; $ ls -1 /sys/class/power_supply/
+battery = BAT1
+adapter = ACAD
+poll-interval = 5
+time-format = %H:%M
+format-charging = <animation-charging> <label-charging>
+format-charging-foreground = ${colors.blue}
+format-charging-overline = ${colors.blue}
+format-charging-padding = 1
+label-charging = %percentage%% %time% %consumption%
+format-discharging = <ramp-capacity> <label-discharging>
+format-discharging-foreground = ${colors.blue}
+format-discharging-padding = 1
+label-discharging = %percentage%% %time% %consumption%
+format-full = <ramp-capacity> <label-full>
+format-full-foreground = ${colors.blue}
+format-full-padding = 1
+label-full = %percentage%%
+ramp-capacity-0 = "▮    "
+ramp-capacity-1 = "▮▮   "
+ramp-capacity-2 = "▮▮▮  "
+ramp-capacity-3 = "▮▮▮▮ "
+ramp-capacity-4 = "▮▮▮▮▮"
+ramp-capacity-font = 2
+
+
+[module/cpu]
+type = internal/cpu
+interval = 1
+format = <label>
+format-foreground = ${colors.yellow}
+format-padding = 1
+label = CPU %percentage%%
+
+
+[module/date]
+type = internal/date
+date =%A %d %B %Y, %H:%M
+interval = 5
+format-foreground = ${colors.foreground}
+format-padding = 1
+
+
+[module/network]
+type = internal/network
+interface = eno1
+interval = 3
+accumulate-stats = true
+format-connected-padding = 1
+format-disconnected-padding = 1
+format-connected = <label-connected>
+format-connected-foreground = ${colors.blue}
+format-disconnected = <label-disconnected>
+format-disconnected-foreground = ${colors.red}
+format-disconnected-overline = ${colors.red}
+label-connected = "↑%upspeed% ↓%downspeed%"
+
+
+[module/sep]
+type = custom/text
+content = " | "
+content-foreground = ${colors.foreground}
+content-background = ${colors.background}
+
+
+[module/bspwm]
+type = internal/bspwm
+pin-workspaces = true
+fuzzy-match = true
+label-focused = %name%
+label-focused-background = ${colors.background}
+label-focused-foreground = ${colors.blue}
+label-focused-overline= ${colors.blue}
+label-focused-padding = 1
+label-occupied = %name%
+label-occupied-background = ${colors.background}
+label-occupied-foreground = ${colors.foreground}
+label-occupied-overline= ${colors.foreground}
+label-occupied-padding = 1
+label-urgent = %name%
+label-urgent-background = ${colors.background}
+label-urgent-foreground = ${colors.red}
+label-urgent-overline = ${colors.red}
+label-urgent-padding = 1
+label-empty = %name%
+label-empty-foreground = ${colors.foreground}
+label-empty-background = ${colors.background}
+label-empty-padding = 1
+
+
+[global/wm]
+margin-bottom = 0
+margin-top = 0
+
+
+[bar/main]
+; $ polybar -m | cut -d ':' -f 1
+; $ xrandr -q | grep " connected" | cut -d ' ' -f1
+monitor = DP-4
+locale = en_US.utf-8
+override-redirect = false
+enable-ipc = true
+dim-value = 1.0
+fixed-center = true
+bottom = true
+wm-restack = bspwm
+width = 100%
+height = 30
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 1
+font-0 = Hack:size=8.6;3
+font-1 = Hack:size=11;3
+font-2 = Hack:size=10;4
+modules-left = cpu sep memory
+modules-center = bspwm
+modules-right = network sep alsa sep date
+
+
+[bar/secondary]
+monitor = HDMI-0
+locale = en_US.utf-8
+override-redirect = false
+enable-ipc = true
+dim-value = 1.0
+fixed-center = true
+bottom = true
+wm-restack = bspwm
+width = 100%
+height = 30
+background = ${colors.background}
+foreground = ${colors.foreground}
+line-size = 1
+font-0 = Hack:size=8.6;3
+font-1 = Hack:size=11;3
+font-2 = Hack:size=10;4
+modules-left =
+modules-center = bspwm
+modules-right =
+
+
+[settings]
+screenchange-reload = true
+; Compositing operators
+; @see: https://www.cairographics.org/manual/cairo-cairo-t.html#cairo-operator-t
+compositing-background = source
+compositing-foreground = over
+compositing-overline = over
+compositing-underline = over
+compositing-border = over
+pseudo-transparency = false
