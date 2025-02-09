@@ -2,8 +2,8 @@
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 
-bspc monitor DP-4 -d HOME WORK
-bspc monitor HDMI-0 -d WEB OTHER
+bspc monitor DP-4 -d 1 2 3
+bspc monitor HDMI-0 -d 4 5 6
 
 bspc config border_width 1
 bspc config window_gap 0
