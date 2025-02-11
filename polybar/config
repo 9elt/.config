@@ -142,6 +142,7 @@ label-empty-padding = 1
 margin-bottom = 0
 margin-top = 0
 
+
 [bar/base]
 locale = en_US.utf-8
 override-redirect = false

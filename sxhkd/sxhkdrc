@@ -32,7 +32,7 @@ super + y
 
 # swap the current node and the biggest window
 # super + g
-# 	bspc node -s biggest.window
+#     bspc node -s biggest.window
 
 #
 # state/flags
@@ -40,7 +40,7 @@ super + y
 
 # set the window state
 # super + {t,shift + t,s,f}
-# 	bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
+#     bspc node -t {tiled,pseudo_tiled,floating,fullscreen}
 
 # set the node flags
 super + ctrl + {m,x,y,z}
@@ -117,8 +117,9 @@ super + {Left,Down,Up,Right}
     bspc node -v {-20 0,0 20,0 -20,20 0}
 
 #
-# dunst
+# notifications
 #
 
+# show last dismissed notification
 super + ctrl + alt + n
     dunstctl history-pop
