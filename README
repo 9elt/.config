@@ -1,1 +1,6 @@
-my .config
+alacritty
+sxhkd
+hsetroot
+bspwm
+dunst
+polybar
