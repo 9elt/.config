@@ -1,2 +1,2 @@
 cp ~/.config/.xinitrc ~/.xinitrc
-sudo pacman -S neofetch alacritty sxhkd hsetroot bspwm dunst polybar
+sudo pacman -S neofetch alacritty sxhkd hsetroot bspwm dunst polybar neovim
