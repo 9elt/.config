@@ -64,4 +64,4 @@ frame_color = "#EA6C73"
 appname = discord
 timeout = 0
 frame_color = "#738ADB"
-# script =
+script = ~/scripts/discord-notify
