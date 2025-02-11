@@ -1,7 +1,2 @@
-neofetch
-alacritty
-sxhkd
-hsetroot
-bspwm
-dunst
-polybar
+cp ~/.config/.xinitrc ~/.xinitrc
+sudo pacman -S neofetch alacritty sxhkd hsetroot bspwm dunst polybar
