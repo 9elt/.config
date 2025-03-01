@@ -17,6 +17,9 @@ style = "Italic"
 family = "Hack"
 style = "Regular"
 
+[window]
+decorations = "buttonless"
+
 [window.padding]
 x = 8
 y = 8
