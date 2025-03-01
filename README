@@ -1,2 +1,4 @@
-cp ~/.config/.xinitrc ~/.xinitrc
-sudo pacman -S neofetch alacritty sxhkd hsetroot bspwm dunst polybar neovim
+brew tap FelixKratz/formulae
+brew tap koekeishiya/formulae
+brew install yabai jq neofetch skhd sketchybar borders neovim
+brew install --cask alacritty font-hack font-hack-nerd-font
