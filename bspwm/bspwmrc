@@ -2,8 +2,7 @@
 
 pgrep -x sxhkd >/dev/null || sxhkd &
 
-bspc monitor DP-4 -d 1 2 3
-bspc monitor HDMI-0 -d 4 5 6
+bspc monitor DP-2 -d 1 2 3 4
 
 bspc config border_width 1
 bspc config window_gap 0
@@ -21,4 +20,3 @@ while pgrep -u $UID x polybar >/dev/null; do
 done
 
 polybar -c ~/.config/polybar/config main &
-polybar -c ~/.config/polybar/config secondary &
